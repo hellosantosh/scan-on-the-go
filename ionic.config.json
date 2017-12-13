@@ -1,0 +1,8 @@
+{
+  "name": "ScanOnTheGo",
+  "app_id": "8e6b4e77",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
