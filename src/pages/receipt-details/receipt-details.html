@@ -15,41 +15,49 @@
 
 <ion-content padding>
   <ion-list>
+
     <ion-item>
-      <ion-label color="primary">Inline Label</ion-label>
-      <ion-input placeholder="Text Input"></ion-input>
+      <ion-label color="primary" stacked>Date</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="receiptDate"></ion-datetime>
     </ion-item>
-  
+
     <ion-item>
-      <ion-label color="primary" fixed>Fixed Label</ion-label>
-      <ion-input type="tel" placeholder="Tel Input"></ion-input>
+      <ion-label color="primary" stacked>Amount</ion-label>
+      <ion-input placeholder="1234.56"></ion-input>
     </ion-item>
-  
     <ion-item>
-      <ion-input type="number" placeholder="Number Input with no label"></ion-input>
+      <ion-label>Expense Type</ion-label>
+      <ion-select [(ngModel)]="expenseType">
+        <ion-option value="breakfast">Meals-Breakfast</ion-option>
+        <ion-option value="lunch">Meals-Lunch</ion-option>
+        <ion-option value="dinner">Meals-Dinner</ion-option>
+      </ion-select>
     </ion-item>
-  
     <ion-item>
+      <ion-textarea placeholder="Enter a justification" [(ngModel)]="justification"></ion-textarea>
+    </ion-item>
+
+    <!-- <ion-item>
       <ion-label color="primary" stacked>Stacked Label</ion-label>
       <ion-input type="email" placeholder="Email Input"></ion-input>
     </ion-item>
-  
+
     <ion-item>
       <ion-label color="primary" stacked>Stacked Label</ion-label>
       <ion-input type="password" placeholder="Password Input"></ion-input>
     </ion-item>
-  
+
     <ion-item>
       <ion-label color="primary" floating>Floating Label</ion-label>
       <ion-input></ion-input>
     </ion-item>
-  
+
     <ion-item>
       <ion-input placeholder="Clear Input" clearInput></ion-input>
     </ion-item>
-  
+
     <ion-item>
       <ion-textarea placeholder="Enter a description"></ion-textarea>
-    </ion-item>
-  </ion-list></ion-content>
-})
+    </ion-item> -->
+  </ion-list> 
+</ion-content>
