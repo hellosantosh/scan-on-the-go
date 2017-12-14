@@ -57,7 +57,9 @@ export class SelectPicturePage {
   }
 
   pictureOK() {
-    this.navCtrl.push(ReceiptDetailsPage);
+    this.navCtrl.push(ReceiptDetailsPage, {
+      image: this.image,
+    });
   }
 
   backToTakePicture() {
