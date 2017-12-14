@@ -14,6 +14,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'receipt-details.html',
 })
 export class ReceiptDetailsPage {
+  receiptDate: string;
+  amount: number;
+  expenseType: string;
+  justification: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -22,4 +26,7 @@ export class ReceiptDetailsPage {
     console.log('ionViewDidLoad ReceiptDetailsPage');
   }
 
+  sendDataToCloud() {
+    alert("date " + this.receiptDate + "::amount " + this.amount + "::expenseType " + this.expenseType + ":: " + this.justification);
+  }
 }
