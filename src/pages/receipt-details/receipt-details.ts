@@ -52,7 +52,7 @@ export class ReceiptDetailsPage {
   sendDataToCloud() {
 
     alert("corpId: " + this.corpId + " date: " + this.receiptDate + "::amount "
-      + this.amount + "::expenseType " + this.expenseType + ":: " + this.comments);
+      + this.amount + "::expenseType " + this.expenseType + ":: " + this.justification);
 
     if(this.image != null) {
       this.vision.getLabels(this.image).subscribe((result) => {
