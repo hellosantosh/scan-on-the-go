@@ -14,18 +14,17 @@
 
 
 <ion-content padding>
-  <ion-label>Hi there. This is the receipt details page</ion-label>
   <ion-list>
 
     <ion-item>
-      <ion-label color="primary" stacked>Date</ion-label>
+      <ion-label color="primary">Date</ion-label>
       <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="receiptDate"></ion-datetime>
     </ion-item>
 
-    <!-- <ion-item>
-      <ion-label color="primary" stacked>Amount</ion-label>
-      <ion-input placeholder="1234.56" [(ngModel)="amount" ]></ion-input>
-    </ion-item> -->
+    <ion-item>
+      <ion-label color="primary">Amount</ion-label>
+      <ion-input placeholder="1234.56" [(ngModel)]="amount"></ion-input>
+    </ion-item>
     <ion-item>
       <ion-label>Expense Type</ion-label>
       <ion-select [(ngModel)]="expenseType">
@@ -34,12 +33,12 @@
         <ion-option value="dinner">Dinner</ion-option>
       </ion-select>
     </ion-item>
-    <!-- <ion-item>
-      <ion-textarea placeholder="Enter a justification" [(ngModel)]="justification"></ion-textarea>
-    </ion-item> -->
-  
-  <!-- <ion-item>
+    <ion-item>
+      <ion-textarea placeholder="Enter a justification" stacked [(ngModel)]="justification"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
       <button ion-button block (click)="sendDataToCloud()">Submit</button>
-    </ion-item> -->
+    </ion-item>
   </ion-list>
 </ion-content>
