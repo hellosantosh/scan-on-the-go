@@ -14,14 +14,14 @@
 
 export const environment = {
     firebaseConfig: {
-      apiKey: "AIzaSyDNKvu5YZ6fFQozFWWTWp3cykmGjv2qUyo",
-      authDomain: "scan-on-the-go-188706.firebaseapp.com",
-      databaseURL: "https://scan-on-the-go-188706.firebaseio.com",
-      projectId: "scan-on-the-go-188706",
-      storageBucket: "scan-on-the-go-188706.appspot.com",
-      messagingSenderId: "859434171449"
-
+        apiKey: "AIzaSyDNKvu5YZ6fFQozFWWTWp3cykmGjv2qUyo",
+        authDomain: "scan-on-the-go-188706.firebaseapp.com",
+        databaseURL: "https://scan-on-the-go-188706.firebaseio.com",
+        projectId: "scan-on-the-go-188706",
+        storageBucket: "scan-on-the-go-188706.appspot.com",
+        messagingSenderId: "859434171449"
     },
+    
     googleCloudVisionAPIKey: "AIzaSyBAdXjvER-3qVyiSuxnyJjMz2pLr5nSJn8"
 
-  };
+};

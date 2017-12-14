@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 
 @Component({
@@ -9,7 +9,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 export class SelectPicturePage {
   image: string;
 
-  constructor(private camera: Camera) {
+  constructor(private camera: Camera, private navCtrl: NavController, private navParams: NavParams) {
 
   }
 
@@ -50,4 +50,11 @@ export class SelectPicturePage {
     }
   }
 
+  submitPicture() {
+
+  }
+
+  backToTakePicture() {
+    this.image = null;
+  }
 }

@@ -22,7 +22,7 @@ export class GoogleCloudVisionServiceProvider {
           },
           "features": [
             {
-              "type": "LABEL_DETECTION"
+              "type": "TEXT_DETECTION"
             }
           ]
         }
