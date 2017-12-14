@@ -25,7 +25,6 @@ export class LoginPage {
   }
 
   goToHomePage() {
-    alert(this.corpId);
     this.navCtrl.push(SelectPicturePage,
     {
       corpId: this.corpId,

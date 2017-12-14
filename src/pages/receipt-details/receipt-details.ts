@@ -18,8 +18,10 @@ export class ReceiptDetailsPage {
   amount: string;
   expenseType: string;
   comments: string;
+  image: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.image = navParams.get('image');
   }
 
   ionViewDidLoad() {
