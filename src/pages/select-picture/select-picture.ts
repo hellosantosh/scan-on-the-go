@@ -9,9 +9,14 @@ import { ReceiptDetailsPage } from '../receipt-details/receipt-details';
 })
 export class SelectPicturePage {
   image: string;
+  corpId: string;
 
   constructor(private camera: Camera, private navCtrl: NavController, private navParams: NavParams) {
+    this.corpId = navParams.get('corpId');
+  }
 
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad SelectPicturePage');
   }
 
   pictureFromCamera() {
@@ -53,7 +58,6 @@ export class SelectPicturePage {
 
   pictureOK() {
     this.navCtrl.push(ReceiptDetailsPage);
-    alert('Did the receipt Details page come?');
   }
 
   backToTakePicture() {

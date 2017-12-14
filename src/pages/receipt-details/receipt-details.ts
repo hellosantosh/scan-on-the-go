@@ -17,18 +17,17 @@ export class ReceiptDetailsPage {
   receiptDate: string;
   amount: string;
   expenseType: string;
-  justification: string;
+  comments: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    alert('Receipt Details Page loaded');
     console.log('ionViewDidLoad ReceiptDetailsPage');
   }
 
   sendDataToCloud() {
     alert("date " + this.receiptDate + "::amount " 
-    + this.amount + "::expenseType " + this.expenseType + ":: " + this.justification);
+    + this.amount + "::expenseType " + this.expenseType + ":: " + this.comments);
   }
 }

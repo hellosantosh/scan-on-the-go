@@ -25,14 +25,13 @@ export class LoginPage {
   }
 
   goToHomePage() {
-    this.navCtrl.push(SelectPicturePage);
+    alert(this.corpId);
+    this.navCtrl.push(SelectPicturePage,
+    {
+      corpId: this.corpId,
+    });
   }
 
-  // goToHomePage() {
-  //   this.navCtrl.push(SelectPicturePage,
-  //   {
-  //     corpId: 
-  //   });
-  // }
-
+  
+  
 }
