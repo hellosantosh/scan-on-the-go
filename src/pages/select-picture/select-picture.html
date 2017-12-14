@@ -7,12 +7,12 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card>
+  <ion-card *ngIf="image == null">
     <ion-card-header>
-      Hello {{corpId}}
+      Hello {{corpId}}, hope you are having a great trip so far!
     </ion-card-header>
     <ion-card-content>
-      please take a picture of your receipt OR select one from gallery using one of the buttons below
+      Using one of the buttons below, please take a picture of your receipt OR select a receipt picture from your gallery.
     </ion-card-content>
   </ion-card>
 

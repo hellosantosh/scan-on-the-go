@@ -59,6 +59,7 @@ export class SelectPicturePage {
   pictureOK() {
     this.navCtrl.push(ReceiptDetailsPage, {
       image: this.image,
+      corpId: this.corpId,
     });
   }
 

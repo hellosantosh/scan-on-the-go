@@ -19,9 +19,11 @@ export class ReceiptDetailsPage {
   expenseType: string;
   comments: string;
   image: string;
+  corpId: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.image = navParams.get('image');
+    this.corpId = navParams.get('corpId');
   }
 
   ionViewDidLoad() {
@@ -29,7 +31,7 @@ export class ReceiptDetailsPage {
   }
 
   sendDataToCloud() {
-    alert("date " + this.receiptDate + "::amount " 
-    + this.amount + "::expenseType " + this.expenseType + ":: " + this.comments);
+    alert("corpId: " +this.corpId+ " date: " + this.receiptDate + "::amount "
+      + this.amount + "::expenseType " + this.expenseType + ":: " + this.comments);
   }
 }
