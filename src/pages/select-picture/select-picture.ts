@@ -52,7 +52,7 @@ export class SelectPicturePage {
   }
 
   pictureOK() {
-    alert('You pressed OK. why did you?!');
+    alert('You pressed OK.!');
     this.navCtrl.push(ReceiptDetailsPage);
   }
 

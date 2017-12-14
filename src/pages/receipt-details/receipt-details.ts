@@ -27,6 +27,7 @@ export class ReceiptDetailsPage {
   }
 
   sendDataToCloud() {
-    alert("date " + this.receiptDate + "::amount " + this.amount + "::expenseType " + this.expenseType + ":: " + this.justification);
+    alert("date " + this.receiptDate + "::amount " 
+    + this.amount + "::expenseType " + this.expenseType + ":: " + this.justification);
   }
 }
