@@ -12,7 +12,9 @@ import { environment } from '../../environment';
 
 @Injectable()
 export class GoogleCloudVisionServiceProvider {
+
   constructor(public http: Http) { }
+  
   getLabels(base64Image) {
     const body = {
       "requests": [

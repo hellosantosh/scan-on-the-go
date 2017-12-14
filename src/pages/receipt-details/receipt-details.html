@@ -28,13 +28,13 @@
     <ion-item>
       <ion-label>Expense Type</ion-label>
       <ion-select [(ngModel)]="expenseType">
-        <ion-option value="breakfast">Breakfast</ion-option>
+        <ion-option value="breakfast" selected="true">Breakfast</ion-option>
         <ion-option value="lunch">Lunch</ion-option>
         <ion-option value="dinner">Dinner</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-textarea placeholder="Enter a justification" stacked [(ngModel)]="comments">Justification</ion-textarea>
+      <ion-textarea placeholder="Enter a justification" stacked [(ngModel)]="justification">Justification</ion-textarea>
     </ion-item>
 
     <ion-item>
