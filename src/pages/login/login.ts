@@ -15,6 +15,7 @@ import { SelectPicturePage } from '../select-picture/select-picture';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+  corpId: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -26,4 +27,12 @@ export class LoginPage {
   goToHomePage() {
     this.navCtrl.push(SelectPicturePage);
   }
+
+  // goToHomePage() {
+  //   this.navCtrl.push(SelectPicturePage,
+  //   {
+  //     corpId: 
+  //   });
+  // }
+
 }
