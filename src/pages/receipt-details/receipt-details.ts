@@ -62,8 +62,17 @@ export class ReceiptDetailsPage {
       });
     }
     
+    this.showSuccess();
   }
 
+  showSuccess() {
+     let alert = this.alert.create({
+      title: 'Success',
+      subTitle: 'Data submitted for processing to EBS. Enjoy the remaining of your trip',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
   showAlert(message) {
     let alert = this.alert.create({
       title: 'Error',
