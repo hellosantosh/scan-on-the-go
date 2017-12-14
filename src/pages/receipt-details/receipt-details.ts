@@ -23,6 +23,7 @@ export class ReceiptDetailsPage {
   }
 
   ionViewDidLoad() {
+    alert('Receipt Details Page loaded');
     console.log('ionViewDidLoad ReceiptDetailsPage');
   }
 

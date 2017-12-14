@@ -52,8 +52,8 @@ export class SelectPicturePage {
   }
 
   pictureOK() {
-    alert('You pressed OK.!');
     this.navCtrl.push(ReceiptDetailsPage);
+    alert('Did the receipt Details page come?');
   }
 
   backToTakePicture() {
