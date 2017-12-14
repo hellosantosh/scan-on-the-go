@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { ReceiptDetailsPage } from '../receipt-details/receipt-details';
 
 @Component({
   selector: 'page-select-picture',
@@ -50,8 +51,8 @@ export class SelectPicturePage {
     }
   }
 
-  submitPicture() {
-
+  pictureOK() {
+    this.navCtrl.push(ReceiptDetailsPage);
   }
 
   backToTakePicture() {
