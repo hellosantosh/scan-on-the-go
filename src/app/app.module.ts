@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
 import { SelectPicturePage } from '../pages/select-picture/select-picture';
+import { ReceiptDetailsPage } from '../pages/receipt-details/receipt-details';
 import { HomePage } from '../pages/home/home';
 
 import { Camera } from '@ionic-native/camera';
@@ -25,7 +26,8 @@ import { GoogleCloudVisionServiceProvider } from '../providers/google-cloud-visi
     MyApp,
     LoginPage,
     HomePage,
-    SelectPicturePage
+    SelectPicturePage,
+    ReceiptDetailsPage,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { GoogleCloudVisionServiceProvider } from '../providers/google-cloud-visi
     MyApp,
     LoginPage,
     HomePage,
-    SelectPicturePage
+    SelectPicturePage,
+    ReceiptDetailsPage,
   ],
   providers: [
     StatusBar,
