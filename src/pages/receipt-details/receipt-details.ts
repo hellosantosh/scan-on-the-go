@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ReceiptDetailsPage {
   receiptDate: string;
-  amount: number;
+  amount: string;
   expenseType: string;
   justification: string;
 
