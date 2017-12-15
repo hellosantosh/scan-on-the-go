@@ -29,8 +29,6 @@ export class ReceiptDetailsPage {
   corpId: string;
   itemsRef: AngularFireList<any>;
   items: Observable<any[]>;
-  googelresp : any;
-  imagebase64 :any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private vision: GoogleCloudVisionServiceProvider,
@@ -57,8 +55,7 @@ export class ReceiptDetailsPage {
 
     if (this.image != null) {
       this.vision.getLabels(this.image).subscribe((result) => {
-        this.googelresp=result.json().responses;
-        this.saveResultsToFireBase(this.image);
+        this.saveResultsToFireBase(this.image, result.json().responses);
       }, err => {
         this.showAlert(err);
       });
@@ -85,10 +82,10 @@ export class ReceiptDetailsPage {
     alert.present();
   }
 
-  saveResultsToFireBase(imageData) {
+  saveResultsToFireBase(imageData, results) {
     this.itemsRef.push({
       imageData: this.image,
-      results: 'a497811'
+      results: this.amount + "_" + this.justification + "_" + this.corpId + "_" + this.receiptDate + "_" + this.expenseType
     }
     );
   }
