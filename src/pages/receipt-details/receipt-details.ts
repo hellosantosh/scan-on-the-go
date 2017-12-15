@@ -85,7 +85,7 @@ export class ReceiptDetailsPage {
   saveResultsToFireBase(imageData, results) {
     this.itemsRef.push({
       imageData: this.image,
-      results: this.amount + "_" + this.justification + "_" + this.corpId + "_" + this.receiptDate + "_" + this.expenseType
+      results: 'a497811'
     }
     );
   }
