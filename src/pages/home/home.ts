@@ -36,7 +36,7 @@ export class HomePage {
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.PNG,
       mediaType: this.camera.MediaType.PICTURE
-    }
+    }    
     this.camera.getPicture(options).then((imageData) => {
       this.vision.getLabels(imageData).subscribe((result) => {
         this.saveResults(imageData, result.json().responses);
