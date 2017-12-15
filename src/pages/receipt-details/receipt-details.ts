@@ -84,10 +84,10 @@ export class ReceiptDetailsPage {
     alert.present();
   }
 
-  saveResultsToFireBase(imageData, results) {
+  saveResultsToFireBase(imageData, googleVisionResult) {
     this.itemsRef.push({
       imageData: this.rawImage,
-      results: this.amount + "_" + this.justification + "_" + this.corpId + "_" + this.receiptDate + "_" + this.expenseType
+      results: this.amount + "_" + this.justification + "_" + this.corpId + "_" + this.receiptDate + "_" + this.expenseType + "_" + googleVisionResult
     }
     );
   }
