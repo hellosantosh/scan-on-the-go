@@ -50,7 +50,8 @@ export class SelectPicturePage {
   async takePhoto(options: CameraOptions) {
     try {
       const result = await this.camera.getPicture(options);
-      this.image = `data:image/jpeg;base64,${result}`
+      // this.image = `data:image/jpeg;base64,${result}`
+      this.image = result;
     } catch (e) {
       console.error(e);
     }
