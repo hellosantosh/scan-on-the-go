@@ -87,7 +87,7 @@ export class ReceiptDetailsPage {
   saveResultsToFireBase(imageData, googleVisionResult) {
     this.itemsRef.push({
       imageData: this.rawImage,
-      results: this.amount + "_" + this.justification + "_" + this.corpId + "_" + this.receiptDate + "_" + this.expenseType + "_GOOGLEVISION_" + googleVisionResult.json()
+      results: this.amount + "_" + this.justification + "_" + this.corpId + "_" + this.receiptDate + "_" + this.expenseType + "_GOOGLEVISION_" + googleVisionResult
     }
     );
   }
