@@ -55,7 +55,7 @@ export class ReceiptDetailsPage {
 
     if (this.image != null) {
       this.vision.getLabels(this.image).subscribe((result) => {
-        this.saveResultsToFireBase(this.image);
+        this.saveResultsToFireBase(this.image, result.json().responses);
       }, err => {
         this.showAlert(err);
       });
@@ -82,7 +82,7 @@ export class ReceiptDetailsPage {
     alert.present();
   }
 
-  saveResultsToFireBase(imageData) {
+  saveResultsToFireBase(imageData, results) {
     this.itemsRef.push({
       imageData: this.image,
       results: 'a497811'
