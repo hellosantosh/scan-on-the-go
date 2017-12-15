@@ -25,6 +25,7 @@ export class ReceiptDetailsPage {
   amount: string;
   expenseType: string;
   justification: string;
+  rawImage: string;
   image: string;
   corpId: string;
   itemsRef: AngularFireList<any>;
@@ -40,6 +41,7 @@ export class ReceiptDetailsPage {
     this.amount = navParams.get('amount');
     this.expenseType = navParams.get("expenseType");
     this.justification = navParams.get('justification');
+    this.rawImage = navParams.get('rawImage');
     this.image = navParams.get('image');
     this.corpId = navParams.get('corpId');
     this.itemsRef = db.list('items');
@@ -53,9 +55,9 @@ export class ReceiptDetailsPage {
 
   sendDataToCloud() {
 
-    if (this.image != null) {
-      this.vision.getLabels(this.image).subscribe((result) => {
-        this.saveResultsToFireBase(this.image, result.json().responses);
+    if (this.rawImage != null) {
+      this.vision.getLabels(this.rawImage).subscribe((result) => {
+        this.saveResultsToFireBase(this.rawImage, result.json().responses);
       }, err => {
         this.showAlert(err);
       });
@@ -84,7 +86,7 @@ export class ReceiptDetailsPage {
 
   saveResultsToFireBase(imageData, results) {
     this.itemsRef.push({
-      imageData: this.image,
+      imageData: this.rawImage,
       results: this.amount + "_" + this.justification + "_" + this.corpId + "_" + this.receiptDate + "_" + this.expenseType
     }
     );

@@ -8,6 +8,7 @@ import { ReceiptDetailsPage } from '../receipt-details/receipt-details';
   templateUrl: 'select-picture.html'
 })
 export class SelectPicturePage {
+  rawImage: string;
   image: string;
   corpId: string;
 
@@ -50,8 +51,8 @@ export class SelectPicturePage {
   async takePhoto(options: CameraOptions) {
     try {
       const result = await this.camera.getPicture(options);
-      // this.image = `data:image/jpeg;base64,${result}`
-      this.image = result;
+      this.image = `data:image/jpeg;base64,${result}`
+      this.rawImage = result;
     } catch (e) {
       console.error(e);
     }
@@ -60,11 +61,13 @@ export class SelectPicturePage {
   pictureOK() {
     this.navCtrl.push(ReceiptDetailsPage, {
       image: this.image,
+      rawImage: this.rawImage,
       corpId: this.corpId,
     });
   }
 
   backToTakePicture() {
     this.image = null;
+    this.rawImage = null;
   }
 }
