@@ -46,6 +46,7 @@ export class ReceiptDetailsPage {
     this.corpId = navParams.get('corpId');
     this.itemsRef = db.list('items');
     this.items = this.itemsRef.valueChanges();
+    
 
   }
 

@@ -18,23 +18,23 @@
 
     <ion-item>
       <ion-label color="primary">Date</ion-label>
-      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="receiptDate"></ion-datetime>
+      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="receiptDate" value="12/04/2017"></ion-datetime>
     </ion-item>
 
     <ion-item>
       <ion-label color="primary">Amount</ion-label>
-      <ion-input placeholder="1234.56" [(ngModel)]="amount"></ion-input>
+      <ion-input placeholder="1234.56" [(ngModel)]="amount" value="377"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Expense Type</ion-label>
       <ion-select [(ngModel)]="expenseType">
-        <ion-option value="breakfast" selected="true">Breakfast</ion-option>
-        <ion-option value="lunch">Lunch</ion-option>
+        <ion-option value="breakfast">Breakfast</ion-option>
+        <ion-option value="lunch" selected="true">Lunch</ion-option>
         <ion-option value="dinner">Dinner</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-textarea placeholder="Enter a justification" stacked [(ngModel)]="justification">Justification</ion-textarea>
+      <ion-textarea placeholder="Enter a justification" stacked [(ngModel)]="justification" value="I got hungry and it was lunch time">Justification</ion-textarea>
     </ion-item>
 
     <ion-item>
