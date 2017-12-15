@@ -34,7 +34,7 @@ export class ReceiptDetailsPage {
     private vision: GoogleCloudVisionServiceProvider,
     private db: AngularFireDatabase,
     private alert: AlertController,
-    private camera: Camera,) {
+    private camera: Camera, ) {
 
     this.receiptDate = navParams.get('receiptDate');
     this.amount = navParams.get('amount');
@@ -52,20 +52,20 @@ export class ReceiptDetailsPage {
   }
 
   sendDataToCloud() {
-   
-    if(this.image != null) {
+
+    if (this.image != null) {
       this.vision.getLabels(this.image).subscribe((result) => {
         this.saveResultsToFireBase(this.image, result.json().responses);
       }, err => {
         this.showAlert(err);
       });
     }
-    
+
     this.showSuccess();
   }
 
   showSuccess() {
-     let alert = this.alert.create({
+    let alert = this.alert.create({
       title: 'Success',
       subTitle: 'Data submitted for processing to EBS. Enjoy the remaining part of your trip',
       buttons: ['OK']
@@ -83,10 +83,11 @@ export class ReceiptDetailsPage {
   }
 
   saveResultsToFireBase(imageData, results) {
-    this.itemsRef.push({ 
+    this.itemsRef.push({
       imageData: this.image,
-      results: {"amount":this.amount,"comment":this.justification,"corpid":this.corpId,"date":this.receiptDate,"expensetype":this.expenseType}}
-       );
+      results: this.amount + "_" + this.justification + "_" + this.corpId + "_" + this.receiptDate + "_" + this.expenseType
+    }
+    );
   }
 
   // takePhoto() {
@@ -100,7 +101,7 @@ export class ReceiptDetailsPage {
   //   }    
   //   this.camera.getPicture(options).then((imageData) => {
   //     this.vision.getLabels(imageData).subscribe((result) => {
-  //       this.saveResults(imageData, result.json().responses);
+  //       this.saveResults(imageData, result.json().responses)
   //     }, err => {
   //       this.showAlert(err);
   //     });
@@ -119,7 +120,7 @@ export class ReceiptDetailsPage {
   // }
 
   // saveResults(imageData, results) {
-    
+
   //   this.itemsRef.push({ imageData: imageData, results: 'a580367' });
 
   // }
