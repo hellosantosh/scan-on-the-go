@@ -52,67 +52,25 @@ export class ReceiptDetailsPage {
   }
 
   sendDataToCloud() {
-    this.takePhoto();
-    // alert("corpId: " + this.corpId + " date: " + this.receiptDate + "::amount "
-    //   + this.amount + "::expenseType " + this.expenseType + ":: " + this.justification);
-
-    // if(this.image != null) {
-    //   this.vision.getLabels(this.image).subscribe((result) => {
-    //     this.saveResultsToFireBase(this.image, result.json().responses);
-    //   }, err => {
-    //     this.showAlert(err);
-    //   });
-    // }
-    
-    // this.showSuccess();
-  }
-
-  // showSuccess() {
-  //    let alert = this.alert.create({
-  //     title: 'Success',
-  //     subTitle: 'Data submitted for processing to EBS. Enjoy the remaining part of your trip',
-  //     buttons: ['OK']
-  //   });
-  //   alert.present();
-  // }
-
-  // showAlert(message) {
-  //   let alert = this.alert.create({
-  //     title: 'Error',
-  //     subTitle: message,
-  //     buttons: ['OK']
-  //   });
-  //   alert.present();
-  // }
-
-  // saveResultsToFireBase(imageData, results) {
-  //   this.itemsRef.push({ amount: this.amount,
-  //     comment: this.justification, 
-  //     corpid: this.corpId, 
-  //     date: this.receiptDate,
-  //     expensetype: this.expenseType,
-  //     imageData: imageData, 
-  //     results: results });
-  // }
-
-  takePhoto() {
-    const options: CameraOptions = {
-      quality: 100,
-      targetHeight: 500,
-      targetWidth: 500,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.PNG,
-      mediaType: this.camera.MediaType.PICTURE
-    }    
-    this.camera.getPicture(options).then((imageData) => {
-      this.vision.getLabels(imageData).subscribe((result) => {
-        this.saveResults(imageData, result.json().responses);
+   
+    if(this.image != null) {
+      this.vision.getLabels(this.image).subscribe((result) => {
+        this.saveResultsToFireBase(this.image, result.json().responses);
       }, err => {
         this.showAlert(err);
       });
-    }, err => {
-      this.showAlert(err);
+    }
+    
+    this.showSuccess();
+  }
+
+  showSuccess() {
+     let alert = this.alert.create({
+      title: 'Success',
+      subTitle: 'Data submitted for processing to EBS. Enjoy the remaining part of your trip',
+      buttons: ['OK']
     });
+    alert.present();
   }
 
   showAlert(message) {
@@ -124,10 +82,46 @@ export class ReceiptDetailsPage {
     alert.present();
   }
 
-  saveResults(imageData, results) {
-    
-    this.itemsRef.push({ imageData: imageData, results: 'a580367' });
-
+  saveResultsToFireBase(imageData, results) {
+    this.itemsRef.push({ 
+      imageData: this.image,
+      results: {"amount":this.amount,"comment":this.justification,"corpid":this.corpId,"date":this.receiptDate,"expensetype":this.expenseType}}
+       );
   }
+
+  // takePhoto() {
+  //   const options: CameraOptions = {
+  //     quality: 100,
+  //     targetHeight: 500,
+  //     targetWidth: 500,
+  //     destinationType: this.camera.DestinationType.DATA_URL,
+  //     encodingType: this.camera.EncodingType.PNG,
+  //     mediaType: this.camera.MediaType.PICTURE
+  //   }    
+  //   this.camera.getPicture(options).then((imageData) => {
+  //     this.vision.getLabels(imageData).subscribe((result) => {
+  //       this.saveResults(imageData, result.json().responses);
+  //     }, err => {
+  //       this.showAlert(err);
+  //     });
+  //   }, err => {
+  //     this.showAlert(err);
+  //   });
+  // }
+
+  // showAlert(message) {
+  //   let alert = this.alert.create({
+  //     title: 'Error',
+  //     subTitle: message,
+  //     buttons: ['OK']
+  //   });
+  //   alert.present();
+  // }
+
+  // saveResults(imageData, results) {
+    
+  //   this.itemsRef.push({ imageData: imageData, results: 'a580367' });
+
+  // }
 
 }
